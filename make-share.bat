@@ -8,7 +8,7 @@ set "SRC=%~dp0"
 set "OUT=%~dp0..\ARCNAVE-SHARE-v0.57\ARCNAVE"
 set "ZIP=%~dp0..\ARCNAVE-v0.57.zip"
 echo Copying the app...
-robocopy "%SRC%." "%OUT%" /E /XD cache node_modules .git .claude debug-cutouts "%SRC%deploy\out" /XF *.tmp HANDOFF-PROMPT.md /NFL /NDL /NJH /NJS /NP >nul
+robocopy "%SRC%." "%OUT%" /E /XD cache node_modules .git .claude debug-cutouts archive "%SRC%deploy\out" /XF *.tmp HANDOFF-PROMPT.md /NFL /NDL /NJH /NJS /NP >nul
 if exist "%SRC%..\node\node-v24.20.0-win-x64\node.exe" (
   echo Copying portable Node...
   robocopy "%SRC%..\node\node-v24.20.0-win-x64" "%OUT%\node" node.exe LICENSE /NFL /NDL /NJH /NJS /NP >nul

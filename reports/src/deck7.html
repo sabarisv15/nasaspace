@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARCNAVE: 7-slide demo deck</title>
+<!-- The Space Apps demo deck: 7 slides, 16:9. Build: node reports/src/deck7.cjs (prints reports/ARCNAVE-Deck.pdf). -->
+<style>
+  @page { size: 1920px 1080px; margin: 0 }
+  * { box-sizing: border-box; margin: 0; padding: 0 }
+  :root { --bg: #05070d; --card: #111826; --line: #263244; --fg: #f2f5f9; --fg2: #a9b3c2; --teal: #2dd4bf; --amber: #ffb547; --violet: #8b9bff }
+  body { background: var(--bg); color: var(--fg); font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif }
+  .s { width: 1920px; height: 1080px; padding: 84px 100px 70px; position: relative; overflow: hidden; page-break-after: always;
+       background: radial-gradient(1200px 700px at 85% 0%, rgba(45,212,191,.10), transparent 60%), radial-gradient(900px 600px at 0% 100%, rgba(139,155,255,.08), transparent 60%), var(--bg) }
+  .s:last-child { page-break-after: auto }
+  .kick { font: 600 22px/1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--teal) }
+  h1 { font-size: 64px; line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin: 18px 0 0 }
+  h1 em { font-style: normal; background: linear-gradient(90deg, #5eead4, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent }
+  p, li { font-size: 30px; line-height: 1.45; color: var(--fg2) }
+  b { color: var(--fg) }
+  .num { position: absolute; right: 100px; bottom: 44px; font: 600 20px ui-monospace, Menlo, Consolas, monospace; color: #5b6678 }
+  .foot { position: absolute; left: 100px; bottom: 44px; font-size: 20px; color: #5b6678 }
+  .shot { border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); display: block }
+  .row { display: flex; gap: 60px; align-items: flex-start }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 32px }
+  ul { list-style: none } li { margin: 0 0 18px; padding-left: 34px; position: relative }
+  li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal) }
+  table { border-collapse: collapse; width: 100%; font-size: 28px }
+  th { text-align: left; color: var(--teal); font: 600 20px ui-monospace, Menlo, Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; padding: 0 20px 16px 0; border-bottom: 1px solid var(--line) }
+  td { padding: 20px 20px 20px 0; border-bottom: 1px solid var(--line); color: var(--fg2); vertical-align: top }
+  td:first-child { color: var(--fg); font-weight: 700; white-space: nowrap }
+  td.m { color: var(--fg); font-weight: 600 }
+  .ok { color: var(--teal); font-weight: 700; white-space: nowrap }
+  .big { font-size: 96px; font-weight: 800; color: var(--fg); line-height: 1 }
+  .big small { font-size: 40px; color: var(--fg2); font-weight: 600 }
+  .stat p { font-size: 26px; margin-top: 10px }
+  .pipe { display: flex; gap: 14px; margin: 44px 0 40px }
+  .pipe div { flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px }
+  .pipe b { display: block; font-size: 28px; margin-bottom: 8px } .pipe span { font-size: 22px; color: var(--fg2); line-height: 1.35; display: block }
+  .pipe i { font-style: normal; color: var(--teal); font: 600 18px ui-monospace, Menlo, Consolas, monospace }
+  .warn { border-color: rgba(255,181,71,.5); background: rgba(255,181,71,.06) } .warn .kick { color: var(--amber) }
+  .url { font: 700 44px ui-monospace, Menlo, Consolas, monospace; color: var(--teal) }
+  .tag { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 8px 20px; font-size: 22px; color: var(--fg2); margin: 0 10px 12px 0 }
+</style>
+</head>
+<body>
+
+<!-- 1 · Title -->
+<section class="s">
+  <div class="row" style="align-items:center;height:100%;margin-top:-30px">
+    <div style="flex:1">
+      <div class="kick">NASA Space Apps Challenge 2026 · Planet X and SPHEREx</div>
+      <h1 style="font-size:120px;margin-top:34px">ARCNAVE</h1>
+      <h1 style="font-size:64px;margin-top:20px">Watch the sky change.<br><em>Find what moves.</em></h1>
+      <p style="margin-top:40px;max-width:760px">A free public web tool that plays NASA SPHEREx's <b>real</b> infrared images of any spot in the
+        sky as a film, measures what moves, and checks every result against ESA Gaia and NASA WISE.</p>
+      <p style="margin-top:34px;font-size:26px">Team ARCNAVE · <span style="color:var(--teal)">arcnave.vldeena2008.workers.dev</span></p>
+    </div>
+    <img class="shot" src="shots-full/01-landing-hero.jpg" style="width:880px">
+  </div>
+  <div class="num">1 / 7</div>
+</section>
+
+<!-- 2 · The problem -->
+<section class="s">
+  <div class="kick">The problem</div>
+  <h1>SPHEREx maps the whole sky every six months.<br><em>Hard for anyone to watch it change.</em></h1>
+  <div class="row" style="margin-top:60px">
+    <ul style="flex:1.2">
+      <li><b>102 infrared colours, 0.75-5 µm,</b> the whole sky twice a year: the right data to see nearby stars, brown dwarfs and asteroids move.</li>
+      <li>But each image is a <b>65 MB scientific FITS file</b>, in slightly different colours from pass to pass, with no film to watch.</li>
+      <li>In 1930 Clyde Tombaugh found Pluto by <b>blinking two photos</b>. Today a student cannot blink SPHEREx.</li>
+    </ul>
+    <div class="card" style="flex:.8">
+      <div class="kick" style="margin-bottom:22px">NASA asked for</div>
+      <p style="font-size:30px">"A public-facing web tool to display images of the sky from the SPHEREx mission, making it <b>easy for anyone to quickly see how they change over time</b>."</p>
+      <p style="font-size:24px;margin-top:22px">Tested on Barnard's Star, Epsilon Indi B, WISE 0855, RW Aurigae and R Draconis.</p>
+    </div>
+  </div>
+  <div class="num">2 / 7</div>
+</section>
+
+<!-- 3 · What we built -->
+<section class="s">
+  <div class="kick">What we built</div>
+  <h1>Type a place. <em>The real sky plays as a film.</em></h1>
+  <div class="row" style="margin-top:50px">
+    <img class="shot" src="shots-full/20-film-barnard.jpg" style="width:1040px">
+    <ul style="flex:1">
+      <li><b>Any RA/Dec or a name,</b> or a click on the whole-sky map.</li>
+      <li><b>Film, Blink, Swipe, Time machine, Difference:</b> every SPHEREx pass in date order.</li>
+      <li><b>Movers circled pass by pass</b> and measured in ″/yr, with an error.</li>
+      <li><b>"How sure are we?"</b> on every result. Nothing is called a discovery.</li>
+      <li>Gaia and WISE overlays, spectra, light curves, contamination flags, a link for every view.</li>
+    </ul>
+  </div>
+  <div class="foot">Shown: Barnard's Star, pass 1 of 3, in the live app.</div>
+  <div class="num">3 / 7</div>
+</section>
+
+<!-- 4 · How NASA data makes it possible -->
+<section class="s">
+  <div class="kick">How NASA and partner data make it work</div>
+  <h1>4 MB instead of 65 MB per image, <em>lined up on Gaia.</em></h1>
+  <div class="pipe">
+    <div><i>1 · FIND</i><b>IRSA TAP</b><span>every SPHEREx image of the spot, all releases (QR2, QR3, DR1, DR2)</span></div>
+    <div><i>2 · READ</i><b>AWS S3</b><span>only the rows the field needs, from NASA's open copy</span></div>
+    <div><i>3 · CLEAN</i><b>FLAGS</b><span>saturation, ghosts, cosmic rays masked; zodiacal light removed</span></div>
+    <div><i>4 · ALIGN</i><b>ESA Gaia DR3</b><span>stars moved to each image's date</span></div>
+    <div><i>5 · MEASURE</i><b>Own PSF</b><span>a straight line through the passes, with errors</span></div>
+    <div><i>6 · CHECK</i><b>WISE · MPC</b><span>CatWISE2020, SkyBoT, JPL Horizons</span></div>
+  </div>
+  <div class="row">
+    <div class="card" style="flex:1"><p><b>All 8 challenge resources used:</b> IRSA SPHEREx, the SPHEREx tutorial notebooks, WiseView, Gaia DR3, CSA NEOSSat, CADC, the NEOSSat tutorial and open dataset.</p></div>
+    <div class="card" style="flex:1"><p><b>New releases need no code change:</b> SPHEREx DR1 and DR2 appeared in the search by themselves. Every view exports a Jupyter notebook (Astropy) to redo the work.</p></div>
+  </div>
+  <div class="num">4 / 7</div>
+</section>
+
+<!-- 5 · Results -->
+<section class="s">
+  <div class="kick">Results · measured by ARCNAVE on real SPHEREx images</div>
+  <h1>NASA's five test targets: <em>5 of 5 answered.</em></h1>
+  <table style="margin-top:50px">
+    <tr><th>Target</th><th>ARCNAVE measured</th><th>Reference</th><th></th></tr>
+    <tr><td>Barnard's Star</td><td class="m">9.9″/yr north (9.7″ in 359 days)</td><td>Gaia DR3 10.4″/yr</td><td class="ok">✓ motion</td></tr>
+    <tr><td>Epsilon Indi B</td><td class="m">4.32 ± 0.27″/yr south-east, 4 passes</td><td>4.68″/yr</td><td class="ok">✓ motion</td></tr>
+    <tr><td>WISE 0855−0714</td><td class="m">8.82 ± 1.10″/yr west, AB 17.15 at 11.8σ</td><td>CatWISE2020 7.94″/yr, agrees</td><td class="ok">✓ motion</td></tr>
+    <tr><td>RW Aurigae</td><td class="m">faded 0.74 mag in 6 of 6 colours</td><td>comparison stars steady to 0.13 mag</td><td class="ok">✓ change</td></tr>
+    <tr><td>R Draconis</td><td class="m">changed 1.24 mag at 0.85 µm, 10 images</td><td>comparison stars steady to 0.12 mag</td><td class="ok">✓ change</td></tr>
+  </table>
+  <p style="margin-top:34px;font-size:26px">One click each in the live app: <span style="color:var(--teal);font-family:ui-monospace,Menlo,Consolas,monospace">#ct=barnard · #ct=epsindb · #ct=wise0855 · #ct=rwaur · #ct=rdra</span></p>
+  <div class="num">5 / 7</div>
+</section>
+
+<!-- 6 · Trust -->
+<section class="s">
+  <div class="kick">Why you can trust it</div>
+  <h1>18 sky fields picked <em>before</em> any run. <em>Misses kept in.</em></h1>
+  <div class="row" style="margin-top:50px">
+    <div style="flex:1">
+      <div class="row" style="gap:40px">
+        <div class="stat"><div class="big">19,880</div><p>fake planets hidden in real SPHEREx images</p></div>
+        <div class="stat"><div class="big">18<small>/18</small></div><p>fields catch a planet 1,000 AU away, down to AB 17</p></div>
+      </div>
+      <div class="row" style="gap:40px;margin-top:40px">
+        <div class="stat"><div class="big">89<small>%</small></div><p>of stars made 2× brighter caught (720 cases)</p></div>
+        <div class="stat"><div class="big">1.03</div><p>scatter of error-scaled misses for 416 fake movers: the errors are honest</p></div>
+      </div>
+    </div>
+    <div class="card warn" style="flex:1">
+      <div class="kick" style="margin-bottom:20px">What it cannot do, and says so</div>
+      <p style="font-size:27px"><b>Planet Nine as predicted is too faint for SPHEREx</b> (V ≈ 19-24, Batygin et al. 2019; our limit is AB 17). The test shows how deep the method reaches, not that Planet X is there.</p>
+      <p style="font-size:27px;margin-top:20px"><b>Within reach:</b> nearby cold brown dwarfs like WISE 0855, fast stars, asteroids. Pixels are 6.2″, so motions under 1″/yr are too small.</p>
+    </div>
+  </div>
+  <div class="num">6 / 7</div>
+</section>
+
+<!-- 7 · For everyone, next -->
+<section class="s">
+  <div class="kick">Made for everyone · what is next</div>
+  <h1>The changing infrared sky, <em>for anyone, on day one.</em></h1>
+  <div class="row" style="margin-top:50px">
+    <img class="shot" src="shots-full/03-landing-tamil.jpg" style="width:820px">
+    <div style="flex:1">
+      <div><span class="tag">English · தமிழ் · हिन्दी · Español</span><span class="tag">works on phones</span><span class="tag">no sign-up</span><span class="tag">narrated tours</span><span class="tag">"Find the asteroid" game</span></div>
+      <ul style="margin-top:26px">
+        <li><b>Students and the public:</b> watch a real star move in 60 seconds.</li>
+        <li><b>Citizen scientists:</b> WiseView-style blinking for SPHEREx with Backyard Worlds checks built in.</li>
+        <li><b>Next:</b> every new SPHEREx release explorable the day it is out; candidate lists for nearby brown dwarfs.</li>
+      </ul>
+      <p style="margin-top:30px;font-size:24px">Try it now</p>
+      <div class="url">arcnave.vldeena2008.workers.dev</div>
+      <p style="margin-top:12px;font-size:22px">Code: github.com/deen2923/arcnave</p>
+    </div>
+  </div>
+  <div class="foot">Data: NASA/IPAC IRSA (SPHEREx), ESA Gaia DR3, NASA WISE, CSA NEOSSat/CADC. Images in false colour.</div>
+  <div class="num">7 / 7</div>
+</section>
+
+</body>
+</html>

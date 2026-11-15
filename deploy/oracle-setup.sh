@@ -33,5 +33,5 @@ if ! sudo swapon --show | grep -q /swapfile; then
 fi
 
 echo
-echo "Done. Log out and log in again (so 'docker' works without sudo), then follow DEPLOY.md step 6."
-echo "Also open ports 80 and 443 in the Oracle console (VCN > Security List > Ingress rules), see DEPLOY.md step 3."
+echo "Done. Log out and log in again (so 'docker' works without sudo), then follow docs/deploy/DEPLOY-DOCKER-ORACLE.md step 6."
+echo "Also open ports 80 and 443 in the Oracle console (VCN > Security List > Ingress rules), see docs/deploy/DEPLOY-DOCKER-ORACLE.md step 3."

@@ -5,13 +5,10 @@ test
 replay*
 .git
 # not needed on the server (docs, backups, local tools output)
-public-backup-*
-redesign-docs
+archive
+docs
 reports
-research_notes
-arcnave-v0.11.0-update
 scorecard
-sync.csv
 *.zip
 *.tgz
 deploy/.env

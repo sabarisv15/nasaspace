@@ -1,7 +1,7 @@
 # Deploy ARCNAVE 24/7 with no card: Hugging Face Space + Cloudflare
 
 > **Tried 15 Nov 2026: Hugging Face now refuses Docker Spaces on the free plan** ("hosting Gradio and Docker Spaces on
-> free cpu-basic requires a PRO subscription", 402 at create). Use **`DEPLOY-CLOUDFLARE-ONLY.md`** instead (no card, no
+> free cpu-basic requires a PRO subscription", 402 at create). Use **`DEPLOY-CLOUDFLARE.md`** instead (no card, no
 > server). This page stays for the day a PRO account is available; `deploy/cloudflare/worker.js` is now the Cloudflare-only
 > Worker, so step 5 below needs the earlier front-door Worker from git history (commit e2f4384).
 

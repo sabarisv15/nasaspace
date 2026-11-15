@@ -1,4 +1,4 @@
-# Builds and publishes ARCNAVE on Cloudflare (DEPLOY-CLOUDFLARE-ONLY.md). Run in PowerShell from the repo folder:
+# Builds and publishes ARCNAVE on Cloudflare (docs/deploy/DEPLOY-CLOUDFLARE.md). Run in PowerShell from the repo folder:
 #   powershell -ExecutionPolicy Bypass -File deploy\cloudflare\deploy.ps1 https://arcnave.<your-subdomain>.workers.dev
 #   (add -SkipBuild to upload deploy\out\cf as it is, e.g. after an upload was cut off)
 # The first time, Wrangler opens the browser to allow it; later runs reuse that login. A cut-off upload is tried again

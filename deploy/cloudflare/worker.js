@@ -1,4 +1,4 @@
-// ARCNAVE on Cloudflare, free plan, no card, always on (DEPLOY-CLOUDFLARE-ONLY.md). Static files (the pages, the team PC's
+// ARCNAVE on Cloudflare, free plan, no card, always on (docs/deploy/DEPLOY-CLOUDFLARE.md). Static files (the pages, the team PC's
 // cache of archive answers, cutouts and sky tiles) are served by Cloudflare directly, without this Worker. It runs only for:
 //   /_p?u=<url>&t=<s>  the archive proxy for public/edge-api.js (the archives send no CORS headers). Only the archives
 //                      ARCNAVE uses; GET replies are kept at Cloudflare's edge for t seconds, so the next visitor gets them

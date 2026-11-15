@@ -1396,6 +1396,7 @@ body.touring #chgl .chgks{gap:6px}
 
 /* hero: place box and the film / blink picture */
 .lp-q{margin:1.4rem 0 0;max-width:30rem}
+.lp-qnote{margin:.5rem 0 0;font-size:var(--t-xs);color:var(--fg-3);text-align:center}
 .lp-q label{display:block;margin:0 0 .45rem;font-size:var(--t-xs);color:var(--fg-3);letter-spacing:.02em}
 .lp-qrow{display:flex;align-items:center;gap:.5rem;padding:.3rem .35rem .3rem .8rem;border-radius:var(--rf);background:rgba(10,14,26,.78);border:1px solid var(--stroke-2)}
 .lp-qrow:focus-within{border-color:var(--ir-2);box-shadow:0 0 0 3px var(--ir-dim)}

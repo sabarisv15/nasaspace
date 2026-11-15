@@ -76,7 +76,7 @@
 </svg>
 
 <!-- ===== Landing page (v0.55: professional redesign). Shown on first open only (see the script in <head>). Every number
-     on it is a result ARCNAVE itself measured (README / CHANGELOG-redesign.md, v0.33-v0.54) or a published mission fact
+     on it is a result ARCNAVE itself measured (README / docs/CHANGELOG-redesign.md, v0.33-v0.54) or a published mission fact
      with its source linked; nothing is typed in from elsewhere. English lives here; ta/hi/es are in arc-i18n.js. ===== -->
 <div id="landing" aria-label="ARCNAVE start page">
   <canvas id="starfield" aria-hidden="true"></canvas>
@@ -114,6 +114,7 @@
             <div class="lp-qrow"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
               <input id="lpqi" name="q" autocomplete="off" spellcheck="false" placeholder="RA Dec, or a name: 190 -4, M31" data-i18n-ph="v5.q.ph">
               <button type="submit" data-i18n="v5.q.go">Go</button></div>
+            <p class="lp-qnote" data-i18n="v5.q.note">NASA's 5 test targets open in seconds. A new spot is downloaded live from NASA: 20-90 s the first time.</p>
           </form>
           <ul class="lp-trust rv d4">
             <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="trust.real">Real images from NASA/IPAC IRSA</span></li>
@@ -275,7 +276,7 @@
           <li>NASA SPHEREx · NASA/IPAC IRSA</li><li>ESA Gaia DR3</li><li>NASA WISE · CatWISE2020 · AllWISE · 2MASS</li><li>IMCCE SkyBoT · Minor Planet Center</li><li>NASA JPL Horizons</li><li>CDS Aladin Lite, HiPS &amp; SIMBAD</li></ul></div>
         <div><h3 data-i18n="ft.tool">The tool</h3><ul>
           <li><a href="#" data-launch data-i18n="cta.launch">Launch ARCNAVE</a></li><li><a href="#lp-targets" data-i18n="nav.targets">Test targets</a></li><li><a href="/about.html#tested" data-i18n="ft.tested">How we tested it</a></li><li><a href="/about.html#limits" data-i18n="ft.limits">Limits, honestly</a></li><li><a href="#top" data-i18n="v5.top">Back to top</a></li></ul></div>
-        <p class="fine"><span data-i18n="ft.fine">Images are false-colour infrared. Planet X is hypothetical. No discovery is claimed.</span><span class="mono">v0.57.14</span></p>
+        <p class="fine"><span data-i18n="ft.fine">Images are false-colour infrared. Planet X is hypothetical. No discovery is claimed.</span><span class="mono">v0.57.15</span></p>
       </div>
     </footer>
   </div>
@@ -287,7 +288,7 @@
 
 <header class="top">
   <button type="button" class="homeb" id="homeb" title="Back to the start page"><svg class="ic" aria-hidden="true"><use href="#i-chev"/></svg>Home</button>
-  <button type="button" class="brand" id="brandb" aria-label="ARCNAVE: back to the start page" title="Back to the start page"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-logo"/></svg><span class="bt"><span class="wm">ARCNAVE</span><i class="spec" aria-hidden="true"></i></span><small>Real SPHEREx images, real known movers</small><span class="ver">v0.57.14</span></button>
+  <button type="button" class="brand" id="brandb" aria-label="ARCNAVE: back to the start page" title="Back to the start page"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-logo"/></svg><span class="bt"><span class="wm">ARCNAVE</span><i class="spec" aria-hidden="true"></i></span><small>Real SPHEREx images, real known movers</small><span class="ver">v0.57.15</span></button>
   <form id="sf" role="search"><span class="sfi" aria-hidden="true"><svg class="ic"><use href="#i-search"/></svg></span><input id="q" aria-label="Search object name or RA Dec coordinates" placeholder="Name, or RA Dec: 190 -4" autocomplete="off" spellcheck="false"><button>Fly to</button></form>
   <div class="acts">
       <span class="fld tfov"><label for="csize" class="help" data-tip="fov">FOV</label><select id="csize"><option value="0.25">0.25°</option><option value="0.5" selected>0.5°</option><option value="1">1°</option></select></span>

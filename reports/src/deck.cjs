@@ -2,7 +2,7 @@
 const path = require('path'), fs = require('fs');
 const pptxgen = require('pptxgenjs');
 const { applyTheme } = require(process.env.APPLY_THEME);
-const DIR = __dirname, SHOT = path.join(DIR, 'shots'), EXIST = 'D:/ARCNAVE-SPHEREX/ARCNAVE SPHEREX/redesign-docs/ui-after/0.55.0';
+const DIR = __dirname, SHOT = path.join(DIR, 'shots'), EXIST = 'D:/ARCNAVE-SPHEREX/ARCNAVE SPHEREX/archive/redesign-docs/ui-after/0.55.0';
 const OUT = process.argv[2];
 
 const THEME = { name: 'ARCNAVE Space', headFontFace: 'Calibri', bodyFontFace: 'Calibri',

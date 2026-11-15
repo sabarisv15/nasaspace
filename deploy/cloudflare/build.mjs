@@ -1,6 +1,6 @@
 // Makes deploy/out/cf: ARCNAVE as a Cloudflare Worker with static assets (free plan, no card, always on; this PC can be off).
 //   node deploy/cloudflare/build.mjs https://arcnave.<your-subdomain>.workers.dev
-// What goes where (see DEPLOY-CLOUDFLARE-ONLY.md):
+// What goes where (see docs/deploy/DEPLOY-CLOUDFLARE.md):
 //   /                  public/ (the pages, %ORIGIN% filled in with the site address, edge-api.js added to each page)
 //   /lib/*.js          the browser copies of lib/ the pages load
 //   /edge-parsers.js   lib/parsers.js wrapped for the browser (the archive answers are read in the visitor's browser)

@@ -1,4 +1,4 @@
-# ARCNAVE on a Hugging Face Docker Space (free CPU basic: 2 vCPU, 16 GB RAM, no card). See DEPLOY-HF-CLOUDFLARE.md.
+# ARCNAVE on a Hugging Face Docker Space (free CPU basic: 2 vCPU, 16 GB RAM, no card). See docs/deploy/DEPLOY-HF-CLOUDFLARE.md.
 # deploy/hf/pack-hf.ps1 copies this file to the root of the Space, next to the app and the PC's cache/ folder.
 # The cache is part of the image: every field opened on the PC opens at once here, and survives restarts and rebuilds.
 # Fields first opened on the Space are kept on its disk until the next restart (Cloudflare's edge keeps them longer).

@@ -1,10 +1,14 @@
 # Submission deck and report: sources
 
+**The deck for Space Apps is `../ARCNAVE-Deck.pdf` (7 slides, the most the rules allow).** It is printed from
+`deck7.html` by `node reports/src/deck7.cjs` (Playwright + Chromium; the script refuses more than 7 slides).
+`../ARCNAVE-Presentation.pptx` (23 slides) is the long version for talks: do not submit it as the demo.
+
 `../ARCNAVE-Presentation.pptx` and `../ARCNAVE-Project-Report.pdf` are built from these files. Change a number here,
 rebuild both, and check that the app (landing cards, target cards) says the same.
 
 - `deck.cjs`: the deck (PptxGenJS, 23 slides). Images from `crops/` and `shots/`, plus
-  `redesign-docs/ui-after/0.55.0/judge/judge-planetx.jpg` from the repo.
+  `archive/redesign-docs/ui-after/0.55.0/judge/judge-planetx.jpg` from the repo.
 - `report.html` + `pdf.cjs`: the A4 report, printed by Chrome. `SHOT/` in the HTML means `shots/`.
 - `shots.cjs`, `hero.cjs`: how the screenshots in `shots/` were taken (app running on port 8084).
 

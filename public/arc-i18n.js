@@ -242,7 +242,7 @@ window.ARC_LP = {
 Object.assign(window.ARC_LP.ta, {
   'v5.nav.feat': 'அம்சங்கள்', 'v5.nav.tested': 'சோதனைகள்',
   'v5.sub': 'வானின் எந்த இடத்தின் உண்மையான நாசா SPHEREx படங்களும் ஒரு படம் போல ஓடுகின்றன; ESA Gaia, நாசா WISE ஆகியவற்றோடு நேர்மையாகச் சரிபார்க்கப்படுகின்றன.',
-  'v5.q.l': 'அல்லது நேரடியாக ஒரு இடத்துக்குச் செல்லுங்கள்', 'v5.q.ph': 'RA Dec, அல்லது ஒரு பெயர்: 190 -4, M31', 'v5.q.go': 'செல்',
+  'v5.q.note': 'NASA-வின் 5 சோதனை இலக்குகள் சில நொடிகளில் திறக்கும். புதிய இடம் NASA-விலிருந்து நேரடியாகப் பதிவிறக்கப்படும்: முதல் முறை 20-90 நொடி.', 'v5.q.l': 'அல்லது நேரடியாக ஒரு இடத்துக்குச் செல்லுங்கள்', 'v5.q.ph': 'RA Dec, அல்லது ஒரு பெயர்: 190 -4, M31', 'v5.q.go': 'செல்',
   'v5.m.film': 'படம்', 'v5.m.blink': 'சிமிட்டல்',
   'v5.m.filmcap': 'நாசாவின் Epsilon Indi B புலத்தின் உண்மையான ARCNAVE படம்: ஏப்ரல் 2025 முதல் செப்டம்பர் 2026 வரை நான்கு SPHEREx சுற்றுகள், ஒவ்வொன்றுக்கும் ஒரு எண்ணிட்ட வட்டம். Epsilon Indi B ஆண்டுக்கு 4.3 ± 0.3″ தென்கிழக்கே நகர்கிறது (பட்டியல் 4.7″); அதன் ஒளிமிக்க துணை A-வும் நகர்கிறது.',
   'v5.src.eye': 'தரவு மூலங்கள்', 'v5.src.sx': 'படங்கள், QR2 மற்றும் QR3, நேரலையாகப் படிக்கப்படுகின்றன', 'v5.src.ga': 'நட்சத்திர இடங்களும் நகர்வுகளும்; ஒவ்வொரு படமும் இதன் மீது சீரமைக்கப்படுகிறது',
@@ -282,7 +282,7 @@ Object.assign(window.ARC_LP.ta, {
 Object.assign(window.ARC_LP.hi, {
   'v5.nav.feat': 'विशेषताएँ', 'v5.nav.tested': 'परीक्षण',
   'v5.sub': 'आकाश के किसी भी स्थान की असली NASA SPHEREx तस्वीरें, फ़िल्म की तरह चलती हुई, ESA Gaia और NASA WISE के साथ ईमानदार जाँच के साथ।',
-  'v5.q.l': 'या सीधे किसी जगह पर जाएँ', 'v5.q.ph': 'RA Dec, या कोई नाम: 190 -4, M31', 'v5.q.go': 'जाएँ',
+  'v5.q.note': 'NASA के 5 परीक्षण लक्ष्य कुछ सेकंड में खुलते हैं। नई जगह NASA से सीधे डाउनलोड होती है: पहली बार 20-90 सेकंड।', 'v5.q.l': 'या सीधे किसी जगह पर जाएँ', 'v5.q.ph': 'RA Dec, या कोई नाम: 190 -4, M31', 'v5.q.go': 'जाएँ',
   'v5.m.film': 'फ़िल्म', 'v5.m.blink': 'ब्लिंक',
   'v5.m.filmcap': 'NASA के Epsilon Indi B क्षेत्र की असली ARCNAVE फ़िल्म: अप्रैल 2025 से सितंबर 2026 तक चार SPHEREx पास, हर एक के लिए एक क्रमांकित घेरा। Epsilon Indi B हर साल 4.3 ± 0.3″ दक्षिण-पूर्व की ओर खिसकता है (सूची 4.7″); उसका चमकीला साथी A भी खिसकता है।',
   'v5.src.eye': 'डेटा स्रोत', 'v5.src.sx': 'तस्वीरें, QR2 और QR3, सीधे पढ़ी जाती हैं', 'v5.src.ga': 'तारों की स्थितियाँ और गतियाँ; हर तस्वीर इसी पर संरेखित होती है',
@@ -322,7 +322,7 @@ Object.assign(window.ARC_LP.hi, {
 Object.assign(window.ARC_LP.es, {
   'v5.nav.feat': 'Funciones', 'v5.nav.tested': 'Pruebas',
   'v5.sub': 'Imágenes reales de NASA SPHEREx de cualquier punto del cielo, reproducidas como una película, con comprobaciones honestas frente a ESA Gaia y NASA WISE.',
-  'v5.q.l': 'O ve directamente a un lugar', 'v5.q.ph': 'RA Dec, o un nombre: 190 -4, M31', 'v5.q.go': 'Ir',
+  'v5.q.note': 'Los 5 objetivos de prueba de la NASA se abren en segundos. Un lugar nuevo se descarga en directo de la NASA: 20-90 s la primera vez.', 'v5.q.l': 'O ve directamente a un lugar', 'v5.q.ph': 'RA Dec, o un nombre: 190 -4, M31', 'v5.q.go': 'Ir',
   'v5.m.film': 'Película', 'v5.m.blink': 'Parpadeo',
   'v5.m.filmcap': 'Una película real de ARCNAVE del campo de Epsilon Indi B, de NASA: cuatro pasadas de SPHEREx, de abril de 2025 a septiembre de 2026, con un círculo numerado en cada una. Epsilon Indi B se mueve 4.3 ± 0.3″ al año hacia el sureste (catálogo: 4.7″); su brillante compañera A también se mueve.',
   'v5.src.eye': 'Datos de', 'v5.src.sx': 'las imágenes, QR2 y QR3, leídas en directo', 'v5.src.ga': 'posiciones y movimientos de estrellas; cada imagen se alinea con Gaia',

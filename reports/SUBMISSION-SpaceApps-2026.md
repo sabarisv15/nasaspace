@@ -21,10 +21,11 @@ Type any RA/Dec or a star's name: ARCNAVE fetches every real SPHEREx image of th
 the images up on ESA Gaia DR3 stars and plays the passes in time order, so anything that moves or changes stands out.
 Moving stars are circled pass by pass, measured in arcseconds per year, and checked against Gaia DR3, NASA's
 CatWISE2020 and the known-asteroid services. It answers every objective of the "Planet X and SPHEREx" challenge and
-all five of NASA's test targets with measured numbers: Barnard's Star moves 9.9″/yr (catalogue 10.2″), Epsilon Indi B
+all five of NASA's test targets with measured numbers: Barnard's Star moves 9.9″/yr (Gaia DR3 10.4″), Epsilon Indi B
 4.3 ± 0.3″/yr (4.7″), WISE 0855 8.82 ± 1.10″/yr (CatWISE2020 7.94″), RW Aurigae faded 0.74 mag and R Draconis
 changed 1.24 mag. To show how far it can be trusted, we hid 19,880 fake planets in real SPHEREx images on 18 sky
-fields chosen in advance: a Planet X at 1,000 AU was found in 18 of 18 fields. It matters because SPHEREx data is
+fields chosen in advance: a Planet X at 1,000 AU was found in 18 of 18 fields down to AB 17 (a Planet Nine as
+predicted would be fainter still, and we say so). It matters because SPHEREx data is
 public but arrives as 65 MB scientific files; ARCNAVE reads only the 4 MB a field needs and lets a student, a
 citizen scientist or a researcher see the changing infrared sky in seconds, in English, Tamil, Hindi or Spanish.
 Nothing is ever called a discovery: every result says how sure it is.
@@ -33,7 +34,7 @@ Nothing is ever called a discovery: every result says how sure it is.
 
 ## 3. Link to Project Demo
 
-[PASTE PUBLIC LINK: 7-slide deck (Google Slides / PDF on Drive) OR video of 30 seconds or less, English or with English subtitles]
+[PASTE PUBLIC LINK to the 7-slide deck: upload `reports/ARCNAVE-Deck.pdf` to Google Drive, set "Anyone with the link: Viewer", paste the link here]
 
 (Test the link in a private window before submitting. No login, no permission request.)
 
@@ -91,7 +92,7 @@ easy for anyone to quickly see how they change over time." ARCNAVE does exactly 
 
 | Target | ARCNAVE measured | Reference |
 |---|---|---|
-| Barnard's Star | 9.7″ north in 359 days = 9.9″/yr | catalogue 10.2″/yr |
+| Barnard's Star | 9.7″ north in 359 days = 9.9″/yr | Gaia DR3 10.4″/yr (10.2″ expected in 359 days) |
 | Epsilon Indi B | 4.3 ± 0.3″/yr south-east over 4 passes | catalogue 4.7″/yr |
 | WISE 0855−0714 | 8.82 ± 1.10″/yr west, AB 17.15 at 11.8σ | CatWISE2020 7.94″/yr (agrees) |
 | RW Aurigae | faded 0.74 mag, Sep 2025 → Sep 2026, in 6 of 6 colours | comparison stars steady to 0.13 mag |
@@ -111,7 +112,9 @@ Four tests on 18 sky fields chosen on a grid before any run (along the ecliptic 
 below), with the fields where ARCNAVE does badly kept in the tables:
 
 - **Hide Planet X:** 19,880 fake planets injected into real SPHEREx images and searched for. A planet at 1,000 AU was
-  found in 18 of 18 fields (median faintest V ≈ 17); at 300 AU in 12 of 18.
+  found in 18 of 18 fields (median faintest AB 17.0); at 300 AU in 12 of 18. This measures how deep the method
+  reaches. A Planet Nine as predicted (V ≈ 19-24, Batygin et al. 2019) is fainter than that, so we do not claim
+  SPHEREx can see it; nearby cold brown dwarfs like WISE 0855 (AB 17.15) are within reach.
 - **Brightness:** stars made 1.5× brighter were caught in 82% of 720 cases, 2× brighter in 89%.
 - **False alarms:** measured by comparing two stacks that differ in nothing real. Crowded Milky Way fields give many
   more, and the app warns the user there.
@@ -140,7 +143,8 @@ exported notebooks, Docker and Caddy for deployment, headless Chrome for end-to-
 ### Honest limits
 
 SPHEREx pixels are 6.2″, so slow movers need several passes; crowded Milky Way fields give more false alarms;
-Planet X is always called hypothetical and candidates are always "unconfirmed".
+Planet X is always called hypothetical and candidates are always "unconfirmed"; a Planet Nine as predicted is fainter
+than SPHEREx's single-field limit, so the realistic targets are nearby brown dwarfs, fast stars and asteroids.
 
 ---
 
@@ -202,6 +206,8 @@ Full credits and acknowledgements: `public/about.html` in the project.
 
 ## 9. Project Demo outline (7 slides max, English)
 
+Built: `reports/ARCNAVE-Deck.pdf` (source `reports/src/deck7.html`). The table below is what is on it.
+
 The rules allow a 7-slide deck (title and intro included) OR a video of 30 s or less. Going over either limit makes
 the project ineligible for Global Judging. Do not show anyone under 18 in slides or video.
 
@@ -222,6 +228,6 @@ the project ineligible for Global Judging. Do not show anyone under 18 in slides
 - **0:05** "This is ARCNAVE: watch the sky change, find what moves."
 - **0:10** (screen: type Barnard's Star, the film plays, the star is circled) "Type any spot. Real SPHEREx images from
   NASA's archive play as a film, lined up on ESA Gaia stars. Movers are circled and measured: Barnard's Star, 9.9
-  arcseconds a year; the catalogue says 10.2. All five NASA targets answered."
+  arcseconds a year; Gaia says 10.4. All five NASA targets answered."
 - **0:20** (screen: scorecard, then the Tamil tour) "Tested with 19,880 hidden fake planets. In four languages, on any
   phone. Every new SPHEREx release, explorable by anyone, on day one."

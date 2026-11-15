@@ -3978,7 +3978,7 @@ function renderOneLook() {
   const sc = SC && !SC.error && SC.summary, mv = MV && !MV.error && MV.summary;
   if (!sc && !mv) return; box.innerHTML = '';
   const out = [];
-  if (sc) out.push(h('li', {}, h('b', {}, 'Planet X: '), `a planet 1000 AU away is caught down to AB ${sc.at1000.median.toFixed(1)} (median of ${sc.at1000.of} fields, from ${sc.at1000.min.toFixed(1)} to ${sc.at1000.max.toFixed(1)}); 300 AU away, in ${sc.at300.found} of ${sc.at300.of} fields. Planet X is hypothetical: this says how faint it could be and still be seen, not that it is there.`));
+  if (sc) out.push(h('li', {}, h('b', {}, 'Planet X: '), `a planet 1000 AU away is caught down to AB ${sc.at1000.median.toFixed(1)} (median of ${sc.at1000.of} fields, from ${sc.at1000.min.toFixed(1)} to ${sc.at1000.max.toFixed(1)}); 300 AU away, in ${sc.at300.found} of ${sc.at300.of} fields. Planet X is hypothetical: this says how faint it could be and still be seen, not that it is there. A Planet Nine as predicted (about V 19-24, Batygin et al. 2019) is fainter than this limit, so SPHEREx is not expected to see it; nearby cold brown dwarfs like WISE 0855 (AB 17.15) are within reach.`));
   if (mv) { const A = mv.all, m = mvCells(A, 'meas'), b = mvCells(A, 'blind'), fast = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]], slow = [[1, 0], [2, 0], [3, 0]], bright = [[2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]];
     out.push(h('li', {}, h('b', {}, 'Moving stars: '), `${mvShare(m, fast)}% of fakes moving 2-8″/yr at S/N 6 or more per image are measured right; the deep search finds ${mvShare(b, bright)}% of those at S/N 12+ on its own. Motions of 1″/yr are below the limit over ${mv.days} days (${mvShare(m, slow)}% measured).`));
     out.push(h('li', {}, h('b', {}, 'Honest errors and few false alarms: '), `error-scaled misses scatter by ${A.pullRms}; ${A.emptyFalse} of ${A.empty} empty places looked like a steady motion; ${A.extra} new flag${A.extra === 1 ? '' : 's'} with fakes added, in ${mv.measured} fields.`)); }
@@ -6274,7 +6274,7 @@ function filmRows() {
 function filmTable(kind) {
   if (!MOVIE.on) { toast('Play the film first (Motion › Animate).'); return; }
   const rows = filmRows(), f = S.field, base = `arcnave_film_movers_${f.ra.toFixed(3)}_${f.dec.toFixed(3)}`;
-  if (kind === 'json') { saveBlob(new Blob([JSON.stringify({ tool: 'ARCNAVE', version: '0.57.14', made: new Date().toISOString(), field: { ra: f.ra, dec: f.dec },
+  if (kind === 'json') { saveBlob(new Blob([JSON.stringify({ tool: 'ARCNAVE', version: '0.57.15', made: new Date().toISOString(), field: { ra: f.ra, dec: f.dec },
     passes: S.eps.map((ep, e) => ({ pass: e + 1, midMjd: +epMid(e).toFixed(4), month: fmtMonth(ep.t0) })),
     rule: 'verdict: agrees when |SPHEREx − catalogue| < max(3·√(σ² + σcat²), 0.3·μcat, 0.5″/yr); unchecked when nothing was measured to compare',
     note: 'how = measured: on the SPHEREx images; predicted: the catalogue\'s positions. A candidate is something to check, never a discovery claim.', movers: rows }, null, 2)], { type: 'application/json' }), base + '.json'); return; }
