@@ -1,0 +1,65 @@
+<!-- ===== v0.58 start page: one screen, one question ("which star?"), five ready answers. English here; ta/hi/es in arc-i18n.js (n.* keys). ===== -->
+<div id="landing" class="nh" aria-label="ARCNAVE start page">
+  <nav class="nh-nav" aria-label="Start page">
+    <a class="nh-brand" href="#nh-top" aria-label="ARCNAVE, top of the page"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-logo"/></svg><span>ARCNAVE</span></a>
+    <div class="nh-links">
+      <a href="#nh-how" data-i18n="n.nav.how">How it works</a>
+      <a href="#nh-trust" data-i18n="n.nav.trust">Can I trust it?</a>
+      <a href="/about.html" data-i18n="n.nav.about">About</a>
+    </div>
+    <select class="nh-lang" data-lang aria-label="Language"><option value="en">English</option><option value="ta" lang="ta">தமிழ்</option><option value="hi" lang="hi">हिन्दी</option><option value="es" lang="es">Español</option></select>
+  </nav>
+
+  <header class="nh-hero" id="nh-top">
+    <p class="nh-kick" data-i18n="n.kick">NASA Space Apps Challenge 2026 · Planet X and SPHEREx</p>
+    <h1 data-i18n="n.h1">See the sky move.</h1>
+    <p class="nh-sub" data-i18n="n.sub">Pick a star. ARCNAVE shows NASA's real SPHEREx photos of that spot one after another, like a short film. If something moves, you will see it.</p>
+    <form class="nh-q" id="lpq" role="search" aria-label="Go to a place in the sky">
+      <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="lpqi" name="q" autocomplete="off" spellcheck="false" placeholder="A star's name, or RA Dec like 190 -4" data-i18n-ph="n.q.ph" aria-label="A star's name, or RA and Dec in degrees">
+      <button type="submit" data-i18n="n.q.go">Show me</button>
+    </form>
+    <p class="nh-note" data-i18n="n.q.note">The five below open from saved NASA photos in about 10-20 seconds. A new place is fetched live: 20-90 seconds the first time.</p>
+  </header>
+
+  <section class="nh-pick" aria-labelledby="nh-pick-h">
+    <h2 id="nh-pick-h" data-i18n="n.pick.h">Start with one of these</h2>
+    <div class="nh-cards">
+      <button type="button" class="nh-card" data-launch-ct="barnard"><img src="/img/targets/tc-barnard.jpg" alt="" width="320" height="200" loading="lazy"><span class="nh-tag mv" data-i18n="n.tag.mv">Moves</span><b>Barnard's Star</b><span data-i18n="n.c.bar">The fastest star in our sky. Watch it creep north.</span></button>
+      <button type="button" class="nh-card" data-launch-ct="epsindb"><img src="/img/targets/tc-epsindb.jpg" alt="" width="320" height="200" loading="lazy"><span class="nh-tag mv" data-i18n="n.tag.mv">Moves</span><b>Epsilon Indi B</b><span data-i18n="n.c.eps">A pair of brown dwarfs drifting past the stars.</span></button>
+      <button type="button" class="nh-card" data-launch-ct="wise0855"><img src="/img/targets/tc-wise0855.jpg" alt="" width="320" height="200" loading="lazy"><span class="nh-tag mv" data-i18n="n.tag.mv">Moves</span><b>WISE 0855</b><span data-i18n="n.c.wise">The coldest brown dwarf known. Faint, but it moves.</span></button>
+      <button type="button" class="nh-card" data-launch-ct="rwaur"><img src="/img/targets/tc-rwaur.jpg" alt="" width="320" height="200" loading="lazy"><span class="nh-tag ch" data-i18n="n.tag.ch">Changes brightness</span><b>RW Aurigae</b><span data-i18n="n.c.rw">A young star that faded over one year.</span></button>
+      <button type="button" class="nh-card" data-launch-ct="rdra"><img src="/img/targets/tc-rdra.jpg" alt="" width="320" height="200" loading="lazy"><span class="nh-tag ch" data-i18n="n.tag.ch">Changes brightness</span><b>R Draconis</b><span data-i18n="n.c.rd">A giant star that swells and fades in a few months.</span></button>
+    </div>
+    <div class="nh-more">
+      <button type="button" data-launch-tour="story"><span class="nh-ico" aria-hidden="true">▶</span><span><b data-i18n="n.m.story">90-second story</b><small data-i18n="n.m.story2">How Pluto was found, and what SPHEREx sees. With voice.</small></span></button>
+      <button type="button" data-try="game"><span class="nh-ico" aria-hidden="true">◎</span><span><b data-i18n="n.m.game">Find the asteroid</b><small data-i18n="n.m.game2">A 60-second game on real photos.</small></span></button>
+      <button type="button" data-launch><span class="nh-ico" aria-hidden="true">◍</span><span><b data-i18n="n.m.sky">Explore the whole sky</b><small data-i18n="n.m.sky2">Turn the sky and pick any spot.</small></span></button>
+    </div>
+  </section>
+
+  <section class="nh-sec" id="nh-how" aria-labelledby="nh-how-h">
+    <h2 id="nh-how-h" data-i18n="n.how.h">How it works</h2>
+    <ol class="nh-steps">
+      <li><b data-i18n="n.how.1h">You pick a spot</b><span data-i18n="n.how.1p">A star's name, or two numbers: RA (0 to 360) and Dec (−90 to +90).</span></li>
+      <li><b data-i18n="n.how.2h">ARCNAVE gets NASA's photos</b><span data-i18n="n.how.2p">Every SPHEREx photo of that spot. SPHEREx photographs the whole sky every six months, in 102 infrared colours.</span></li>
+      <li><b data-i18n="n.how.3h">You watch it change</b><span data-i18n="n.how.3p">The photos play in date order. Stars stay still; anything that moves or changes stands out and is explained in plain words.</span></li>
+    </ol>
+  </section>
+
+  <section class="nh-sec" id="nh-trust" aria-labelledby="nh-trust-h">
+    <h2 id="nh-trust-h" data-i18n="n.tr.h">Can I trust it?</h2>
+    <ul class="nh-trust">
+      <li data-i18n-html="n.tr.1"><b>Real data only.</b> Every photo comes from NASA's archive, and every number is measured by ARCNAVE on it.</li>
+      <li data-i18n-html="n.tr.2"><b>Checked against star catalogues.</b> Each moving star is compared with ESA Gaia and NASA WISE. Barnard's Star: 9.9″ a year measured, 10.4″ in Gaia.</li>
+      <li data-i18n-html="n.tr.3"><b>Tested before we looked.</b> 18 sky fields picked in advance, with thousands of fake planets hidden and searched for. Misses are published too.</li>
+      <li data-i18n-html="n.tr.4"><b>Nothing is called a discovery.</b> Planet X is a hypothesis, and a Planet Nine as predicted is too faint for SPHEREx. Every result says how sure it is.</li>
+    </ul>
+    <p class="nh-links2"><a href="/about.html#tested" data-i18n="n.tr.more">How we tested it</a> · <a href="/tools.html" data-i18n="n.tr.tools">Every tool, in plain words</a></p>
+  </section>
+
+  <footer class="nh-foot">
+    <p data-i18n="n.ft.data">Data: NASA SPHEREx (NASA/IPAC IRSA), ESA Gaia DR3, NASA WISE, CSA NEOSSat. Images are false-colour infrared.</p>
+    <p><span data-i18n="n.ft.made">Made by Team ARCNAVE for NASA Space Apps 2026.</span> <a href="https://github.com/deen2923/arcnave" target="_blank" rel="noopener">Code</a> · <a href="/about.html">About</a> · <span class="mono">v0.58.0</span></p>
+  </footer>
+</div>

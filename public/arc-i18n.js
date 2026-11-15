@@ -359,3 +359,68 @@ Object.assign(window.ARC_LP.es, {
   'v5.lr.h': 'Aprende y juega', 'v5.lr.sp': 'Del Plutón de Tombaugh a SPHEREx, narrado en 4 idiomas', 'v5.lr.gh': 'Una guía de cada herramienta', 'v5.lr.gp': 'Paso a paso, en el cielo real',
   'v5.lr.ah': 'Encuentra el asteroide', 'v5.lr.ap': 'Un juego de 60 segundos con imágenes reales', 'v5.top': 'Volver arriba'
 });
+/* v0.58: the new start page (n.* keys) */
+Object.assign(window.ARC_LP.ta, {
+  'n.nav.how': 'இது எப்படி வேலை செய்கிறது', 'n.nav.trust': 'நம்பலாமா?', 'n.nav.about': 'பற்றி',
+  'n.kick': 'நாசா ஸ்பேஸ் ஆப்ஸ் சவால் 2026 · Planet X மற்றும் SPHEREx', 'n.h1': 'வானம் நகர்வதைப் பாருங்கள்.',
+  'n.sub': 'ஒரு நட்சத்திரத்தைத் தேர்ந்தெடுங்கள். அந்த இடத்தின் நாசா SPHEREx உண்மையான படங்களை ARCNAVE ஒரு சிறு படம் போல ஒன்றன்பின் ஒன்றாகக் காட்டும். ஏதாவது நகர்ந்தால், நீங்கள் பார்ப்பீர்கள்.',
+  'n.q.ph': 'நட்சத்திரத்தின் பெயர், அல்லது RA Dec: 190 -4', 'n.q.go': 'காட்டு',
+  'n.q.note': 'கீழே உள்ள ஐந்தும் சேமித்த நாசா படங்களிலிருந்து சுமார் 10-20 நொடிகளில் திறக்கும். புதிய இடம் நேரடியாகக் கொண்டு வரப்படும்: முதல் முறை 20-90 நொடி.',
+  'n.pick.h': 'இவற்றில் ஒன்றிலிருந்து தொடங்குங்கள்', 'n.tag.mv': 'நகர்கிறது', 'n.tag.ch': 'ஒளி மாறுகிறது',
+  'n.c.bar': 'நம் வானில் மிக வேகமாக நகரும் நட்சத்திரம். அது வடக்கே நகர்வதைப் பாருங்கள்.', 'n.c.eps': 'நட்சத்திரங்களைக் கடந்து நகரும் இரட்டை பழுப்புக் குள்ளன்கள்.',
+  'n.c.wise': 'அறியப்பட்டவற்றில் மிகக் குளிர்ந்த பழுப்புக் குள்ளன். மங்கலானது, ஆனால் நகர்கிறது.', 'n.c.rw': 'ஒரு வருடத்தில் மங்கிய ஓர் இளம் நட்சத்திரம்.',
+  'n.c.rd': 'சில மாதங்களில் பெருத்து மங்கும் ஒரு பெரிய நட்சத்திரம்.',
+  'n.m.story': '90 வினாடிக் கதை', 'n.m.story2': 'புளூட்டோ எப்படிக் கண்டுபிடிக்கப்பட்டது, SPHEREx என்ன பார்க்கிறது. குரலுடன்.',
+  'n.m.game': 'சிறுகோளைக் கண்டுபிடி', 'n.m.game2': 'உண்மையான படங்களில் 60 வினாடி விளையாட்டு.', 'n.m.sky': 'முழு வானத்தையும் ஆராயுங்கள்', 'n.m.sky2': 'வானத்தைச் சுழற்றி எந்த இடத்தையும் தேர்ந்தெடுங்கள்.',
+  'n.how.h': 'இது எப்படி வேலை செய்கிறது', 'n.how.1h': 'நீங்கள் ஓர் இடத்தைத் தேர்கிறீர்கள்', 'n.how.1p': 'நட்சத்திரத்தின் பெயர், அல்லது இரண்டு எண்கள்: RA (0 முதல் 360) மற்றும் Dec (−90 முதல் +90).',
+  'n.how.2h': 'ARCNAVE நாசா படங்களைக் கொண்டு வருகிறது', 'n.how.2p': 'அந்த இடத்தின் ஒவ்வொரு SPHEREx படமும். SPHEREx ஆறு மாதங்களுக்கு ஒருமுறை முழு வானத்தையும் 102 அகச்சிவப்பு நிறங்களில் படம் எடுக்கிறது.',
+  'n.how.3h': 'மாற்றத்தைப் பார்க்கிறீர்கள்', 'n.how.3p': 'படங்கள் தேதி வரிசையில் ஓடும். நட்சத்திரங்கள் அசையாது; நகர்வதோ மாறுவதோ தனியாகத் தெரியும், எளிய சொற்களில் விளக்கப்படும்.',
+  'n.tr.h': 'நம்பலாமா?', 'n.tr.1': '<b>உண்மையான தரவு மட்டுமே.</b> ஒவ்வொரு படமும் நாசாவின் காப்பகத்திலிருந்து; ஒவ்வொரு எண்ணும் ARCNAVE அதில் அளந்தது.',
+  'n.tr.2': '<b>நட்சத்திரப் பட்டியல்களுடன் சரிபார்ப்பு.</b> நகரும் ஒவ்வொரு நட்சத்திரமும் ESA Gaia, NASA WISE உடன் ஒப்பிடப்படுகிறது. Barnard\'s Star: அளந்தது ஆண்டுக்கு 9.9″, Gaia-வில் 10.4″.',
+  'n.tr.3': '<b>பார்ப்பதற்கு முன்பே சோதனை.</b> முன்கூட்டியே தேர்ந்த 18 வானப் பகுதிகள், ஆயிரக்கணக்கான போலிக் கோள்கள் மறைத்துத் தேடப்பட்டன. தவறியவையும் வெளியிடப்பட்டுள்ளன.',
+  'n.tr.4': '<b>எதுவும் கண்டுபிடிப்பு என்று சொல்லப்படுவதில்லை.</b> Planet X ஒரு கருதுகோள்; கணிக்கப்பட்ட Planet Nine, SPHEREx-க்கு மிகவும் மங்கலானது. ஒவ்வொரு முடிவும் எவ்வளவு உறுதி என்று சொல்கிறது.',
+  'n.tr.more': 'நாங்கள் எப்படிச் சோதித்தோம்', 'n.tr.tools': 'ஒவ்வொரு கருவியும் எளிய சொற்களில்',
+  'n.ft.data': 'தரவு: NASA SPHEREx (NASA/IPAC IRSA), ESA Gaia DR3, NASA WISE, CSA NEOSSat. படங்கள் போலி-நிற அகச்சிவப்பு.', 'n.ft.made': 'நாசா ஸ்பேஸ் ஆப்ஸ் 2026-க்காக ARCNAVE குழு உருவாக்கியது.'
+});
+Object.assign(window.ARC_LP.hi, {
+  'n.nav.how': 'यह कैसे काम करता है', 'n.nav.trust': 'क्या भरोसा करें?', 'n.nav.about': 'परिचय',
+  'n.kick': 'नासा स्पेस ऐप्स चैलेंज 2026 · Planet X और SPHEREx', 'n.h1': 'आसमान को चलते देखिए।',
+  'n.sub': 'एक तारा चुनिए। ARCNAVE उस जगह की नासा SPHEREx की असली तस्वीरें एक के बाद एक, छोटी फ़िल्म की तरह दिखाता है। अगर कुछ चलता है, तो आप देखेंगे।',
+  'n.q.ph': 'तारे का नाम, या RA Dec: 190 -4', 'n.q.go': 'दिखाइए',
+  'n.q.note': 'नीचे के पाँच सहेजी गई नासा तस्वीरों से लगभग 10-20 सेकंड में खुलते हैं। नई जगह सीधे लाई जाती है: पहली बार 20-90 सेकंड।',
+  'n.pick.h': 'इनमें से किसी एक से शुरू कीजिए', 'n.tag.mv': 'चलता है', 'n.tag.ch': 'चमक बदलती है',
+  'n.c.bar': 'हमारे आसमान का सबसे तेज़ तारा। इसे उत्तर की ओर खिसकते देखिए।', 'n.c.eps': 'तारों के पार खिसकता भूरे बौनों का एक जोड़ा।',
+  'n.c.wise': 'अब तक ज्ञात सबसे ठंडा भूरा बौना। धुंधला, पर चलता है।', 'n.c.rw': 'एक युवा तारा जो एक साल में धुंधला हुआ।', 'n.c.rd': 'एक विशाल तारा जो कुछ महीनों में फूलता और धुंधलाता है।',
+  'n.m.story': '90 सेकंड की कहानी', 'n.m.story2': 'प्लूटो कैसे मिला, और SPHEREx क्या देखता है। आवाज़ के साथ।',
+  'n.m.game': 'क्षुद्रग्रह खोजिए', 'n.m.game2': 'असली तस्वीरों पर 60 सेकंड का खेल।', 'n.m.sky': 'पूरा आसमान देखिए', 'n.m.sky2': 'आसमान घुमाइए और कोई भी जगह चुनिए।',
+  'n.how.h': 'यह कैसे काम करता है', 'n.how.1h': 'आप एक जगह चुनते हैं', 'n.how.1p': 'तारे का नाम, या दो संख्याएँ: RA (0 से 360) और Dec (−90 से +90)।',
+  'n.how.2h': 'ARCNAVE नासा की तस्वीरें लाता है', 'n.how.2p': 'उस जगह की हर SPHEREx तस्वीर। SPHEREx हर छह महीने में पूरे आसमान की 102 अवरक्त रंगों में तस्वीर लेता है।',
+  'n.how.3h': 'आप बदलाव देखते हैं', 'n.how.3p': 'तस्वीरें तारीख़ के क्रम में चलती हैं। तारे स्थिर रहते हैं; जो चलता या बदलता है वह अलग दिखता है और सरल शब्दों में समझाया जाता है।',
+  'n.tr.h': 'क्या भरोसा करें?', 'n.tr.1': '<b>सिर्फ़ असली डेटा।</b> हर तस्वीर नासा के संग्रह से आती है, और हर संख्या ARCNAVE उसी पर मापता है।',
+  'n.tr.2': '<b>तारा-सूचियों से जाँच।</b> हर चलते तारे की तुलना ESA Gaia और NASA WISE से होती है। Barnard\'s Star: मापा 9.9″ प्रति वर्ष, Gaia में 10.4″।',
+  'n.tr.3': '<b>देखने से पहले परीक्षण।</b> पहले से चुने गए 18 आसमानी क्षेत्र, हज़ारों नकली ग्रह छिपाकर खोजे गए। चूकें भी प्रकाशित हैं।',
+  'n.tr.4': '<b>किसी चीज़ को खोज नहीं कहा जाता।</b> Planet X एक परिकल्पना है, और अनुमानित Planet Nine SPHEREx के लिए बहुत धुंधला है। हर नतीजा बताता है कि वह कितना पक्का है।',
+  'n.tr.more': 'हमने कैसे परखा', 'n.tr.tools': 'हर टूल, सरल शब्दों में',
+  'n.ft.data': 'डेटा: NASA SPHEREx (NASA/IPAC IRSA), ESA Gaia DR3, NASA WISE, CSA NEOSSat। तस्वीरें छद्म-रंग अवरक्त हैं।', 'n.ft.made': 'नासा स्पेस ऐप्स 2026 के लिए टीम ARCNAVE ने बनाया।'
+});
+Object.assign(window.ARC_LP.es, {
+  'n.nav.how': 'Cómo funciona', 'n.nav.trust': '¿Puedo fiarme?', 'n.nav.about': 'Acerca de',
+  'n.kick': 'NASA Space Apps Challenge 2026 · Planet X y SPHEREx', 'n.h1': 'Mira cómo se mueve el cielo.',
+  'n.sub': 'Elige una estrella. ARCNAVE muestra las fotos reales de NASA SPHEREx de ese punto una tras otra, como una película corta. Si algo se mueve, lo verás.',
+  'n.q.ph': 'Nombre de una estrella, o RA Dec: 190 -4', 'n.q.go': 'Muéstrame',
+  'n.q.note': 'Las cinco de abajo se abren con fotos guardadas de la NASA en unos 10-20 segundos. Un lugar nuevo se trae en directo: 20-90 segundos la primera vez.',
+  'n.pick.h': 'Empieza con una de estas', 'n.tag.mv': 'Se mueve', 'n.tag.ch': 'Cambia de brillo',
+  'n.c.bar': 'La estrella más rápida de nuestro cielo. Mírala avanzar hacia el norte.', 'n.c.eps': 'Una pareja de enanas marrones que pasa entre las estrellas.',
+  'n.c.wise': 'La enana marrón más fría conocida. Débil, pero se mueve.', 'n.c.rw': 'Una estrella joven que se apagó en un año.', 'n.c.rd': 'Una estrella gigante que se hincha y se apaga en pocos meses.',
+  'n.m.story': 'Historia de 90 segundos', 'n.m.story2': 'Cómo se encontró Plutón y qué ve SPHEREx. Con voz.',
+  'n.m.game': 'Encuentra el asteroide', 'n.m.game2': 'Un juego de 60 segundos con fotos reales.', 'n.m.sky': 'Explora todo el cielo', 'n.m.sky2': 'Gira el cielo y elige cualquier punto.',
+  'n.how.h': 'Cómo funciona', 'n.how.1h': 'Eliges un punto', 'n.how.1p': 'El nombre de una estrella, o dos números: RA (0 a 360) y Dec (−90 a +90).',
+  'n.how.2h': 'ARCNAVE trae las fotos de la NASA', 'n.how.2p': 'Cada foto de SPHEREx de ese punto. SPHEREx fotografía todo el cielo cada seis meses, en 102 colores infrarrojos.',
+  'n.how.3h': 'Ves cómo cambia', 'n.how.3p': 'Las fotos pasan por orden de fecha. Las estrellas quedan quietas; lo que se mueve o cambia destaca y se explica con palabras sencillas.',
+  'n.tr.h': '¿Puedo fiarme?', 'n.tr.1': '<b>Solo datos reales.</b> Cada foto viene del archivo de la NASA, y ARCNAVE mide cada número en ella.',
+  'n.tr.2': '<b>Comprobado con catálogos de estrellas.</b> Cada estrella que se mueve se compara con ESA Gaia y NASA WISE. Barnard\'s Star: 9.9″ al año medidos, 10.4″ en Gaia.',
+  'n.tr.3': '<b>Probado antes de mirar.</b> 18 campos del cielo elegidos de antemano, con miles de planetas falsos escondidos y buscados. Los fallos también se publican.',
+  'n.tr.4': '<b>Nada se llama descubrimiento.</b> Planet X es una hipótesis, y un Planet Nine como el predicho es demasiado débil para SPHEREx. Cada resultado dice qué tan seguro es.',
+  'n.tr.more': 'Cómo lo probamos', 'n.tr.tools': 'Cada herramienta, con palabras sencillas',
+  'n.ft.data': 'Datos: NASA SPHEREx (NASA/IPAC IRSA), ESA Gaia DR3, NASA WISE, CSA NEOSSat. Las imágenes son infrarrojo en falso color.', 'n.ft.made': 'Hecho por el equipo ARCNAVE para NASA Space Apps 2026.'
+});
