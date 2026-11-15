@@ -2,6 +2,18 @@
 
 Every version, newest first, as it was written at the time. Older sections describe older behaviour (for example, v0.1-v0.8 said Planet X was not searched for; the Hide Planet X search came later). The current state is in the README.
 
+## v0.58.0: a new interface, made for someone who has never seen ARCNAVE (15 Nov 2026)
+- **New start page:** one screen, one question ("which star?"). A big search box, the five NASA test stars as picture
+  cards with one plain line each, then the 90-second story, the game and the whole sky. "How it works" in three steps and
+  "Can I trust it?" in four. English, Tamil, Hindi, Spanish. Replaces the nine-section page.
+- **New viewer:** its own top bar (Home, search, Help, Share, language, All tools), a dock on the sky with the four ways
+  to watch (Play the film, Blink, Compare, What changed?), and a result panel in plain words with the five test stars
+  when nothing is open yet. The left controls, the status line, the agents' log and the four-tip quick start are folded
+  away; **All tools** brings back every control (and a guided tour opens them by itself).
+- Presentation only: the new bar and dock call the tool's own search, runChallenge, setMode, movieStart and share, so
+  every measurement is unchanged. Links (#ct=, #ra=&dec=, #tour, #play, ?embed=1) open as before.
+- Phones keep the bottom tabs; the new bar and dock fit 390 px. New files: `public/ui.css`, `public/nv.js`.
+
 ## v0.57.15: ready for judging: 7-slide deck, clean repo, honest Planet X limit (15 Nov 2026)
 - **Demo deck:** `reports/ARCNAVE-Deck.pdf`, 7 slides (the Space Apps limit; the old 23-slide `.pptx` is the long talk
   version). Source `reports/src/deck7.html`, printed by `reports/src/deck7.cjs`, which refuses more than 7 slides.

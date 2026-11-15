@@ -97,71 +97,23 @@
     const b = landing.querySelector('[data-launch]'); if (b) b.focus({ preventScroll: true });
   }
   if (landing) {
+    /* v0.58: the new start page (#landing.nh): in-page links scroll, every button opens the tool through the same
+       launch functions as before, and the tool's scripts are fetched once the visitor shows interest. */
     landing.addEventListener('click', e => {
       const a = e.target.closest('a[href^="#"]');
-      if (a) {   // in-page links scroll the landing; they must never become a hash (a hash opens the tool on reload)
-        e.preventDefault(); const t = a.getAttribute('href').slice(1); const el = t && $(t);
-        if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-        $('lplinks').classList.remove('open'); landing.querySelector('.lp-menu').setAttribute('aria-expanded', 'false');
-      }
-      // v0.55: the hero picture: the real film frame, or the real Lindbloom blink (its 366 kB GIF loads only when asked for)
-      const mt = e.target.closest('[data-media]'); if (mt) { setMedia(mt.dataset.media); return; }
+      if (a) { e.preventDefault(); const t = a.getAttribute('href').slice(1); const el = t && $(t);   // never a hash: a hash opens the tool on reload
+        if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
       const b = e.target.closest('[data-launch],[data-launch-ct],[data-launch-tour],[data-try]'); if (!b) return;
       e.preventDefault();
-      if (b.dataset.mode) setLevel(b.dataset.mode === 'adv');   // v0.55: a card that opens the tool in Beginner or Advanced
-      if (b.dataset.try) launchTry(b.dataset.try, b.dataset.launchCt); else if (b.dataset.launchCt) launchCt(b.dataset.launchCt); else if (b.dataset.launchTour) launchTour(b.dataset.launchTour); else launch();
+      if (b.dataset.mode) setLevel(b.dataset.mode === 'adv');
+      if (b.dataset.try) launchTry(b.dataset.try, b.dataset.launchCt); else if (b.dataset.launchCt) launchCt(b.dataset.launchCt); else if (b.dataset.launchTour) launchTour(b.dataset.launchTour); else { launch(); if (b.dataset.sky != null) loadTool().then(() => ready(() => { const w = $('wsky'); if (w) w.click(); })); }
     });
     const lpq = $('lpq'); if (lpq) lpq.addEventListener('submit', e => { e.preventDefault(); const v = $('lpqi').value.trim(); if (v) launchPlace(v); else $('lpqi').focus(); });
-    const menu = landing.querySelector('.lp-menu');
-    menu.onclick = () => { const o = $('lplinks').classList.toggle('open'); menu.setAttribute('aria-expanded', String(o)); };
-    const nav = landing.querySelector('.lp-nav');
-    landing.addEventListener('scroll', () => { nav.classList.toggle('stuck', landing.scrollTop > 8); drift = landing.scrollTop; }, { passive: true });
-    // reveal on scroll
-    if (reduce || !('IntersectionObserver' in window)) qa('.rv', landing).forEach(el => el.classList.add('in'));
-    else { const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { root: landing, rootMargin: '0px 0px -8% 0px', threshold: .08 });
-      qa('.rv', landing).forEach(el => io.observe(el));
-      qa('.lp-hero .rv', landing).forEach(el => setTimeout(() => el.classList.add('in'), 30));   // the first screen never waits for the observer
-      setTimeout(() => { if (!landing.querySelector('.lp-sec .rv.in')) qa('.rv', landing).forEach(el => el.classList.add('in')); }, 2500); }   // a page that does not render frames (hidden, throttled) shows everything
-    // hero: the still frame paints first; the real blink GIF (366 kB) then plays once the page is idle.
-    // v0.40: where the browser can decode it (ImageDecoder), its own frames play on a canvas over the still, at the GIF's
-    // own timing, so the still stays the page's main image; elsewhere the GIF replaces the still as before.
-    let blinkOn = false, blinkStart = () => {};
-    function setMedia(m) {
-      const film = m !== 'blink';
-      qa('[data-media]', landing).forEach(t => t.setAttribute('aria-selected', String(t.dataset.media === m)));
-      $('lpm-film').hidden = !film; $('lpm-blink').hidden = film; qa('.lp-ticks', landing).forEach(x => { x.hidden = film; });
-      qa('.cap-film', landing).forEach(x => { x.hidden = !film; }); qa('.cap-blink', landing).forEach(x => { x.hidden = film; });
-      if (!film) blinkStart();
-    }
-    const img = $('lpgif');
-    if (img && !reduce) { const swap = async () => {
-        if ('ImageDecoder' in window) try {
-          const dec = new ImageDecoder({ data: await (await fetch(img.dataset.anim)).arrayBuffer(), type: 'image/gif' }); await dec.tracks.ready;
-          const n = dec.tracks.selectedTrack.frameCount, cv2 = document.createElement('canvas'), g2 = cv2.getContext('2d'); let i = 0;
-          cv2.className = 'lpanim'; cv2.setAttribute('aria-hidden', 'true'); img.after(cv2);
-          const step = async () => { if (!html.classList.contains('landing')) return setTimeout(step, 1000);
-            const { image } = await dec.decode({ frameIndex: i }); cv2.width = image.displayWidth; cv2.height = image.displayHeight; g2.drawImage(image, 0, 0);
-            const ms = Math.max(60, (image.duration || 500000) / 1000); image.close(); i = (i + 1) % n; setTimeout(step, ms); };
-          return step();
-        } catch { /* fall back to the GIF */ }
-        const g = new Image(); g.onload = () => { img.src = g.src; }; g.src = img.dataset.anim; };
-      // v0.43: only once the start page is really shown. A link straight into the tool never sees it, so it never downloads
-      // or decodes the 358 kB GIF (it did, measured on the tool page); going back to the start page later starts it then.
-      // v0.55: the film frame is the first picture now; the blink's GIF is fetched only when its tab is opened
-      blinkStart = () => { if (blinkOn) return; blinkOn = true; swap(); }; }
-    // v0.56.1: the hero shows the Lindbloom blink only (no film tab), so it plays once the start page is really shown
-    const blinkIfShown = () => { if (!html.classList.contains('landing')) return false; blinkStart(); return true; };
-    if (!blinkIfShown()) new MutationObserver((_, o) => { if (blinkIfShown()) o.disconnect(); }).observe(html, { attributes: true, attributeFilter: ['class'] });
-    // download (not run) the viewer once the visitor shows interest (points at or touches a Launch or target button, or
-    // scrolls to the targets), so Launch is quick; v0.40: no 1.1 MB download for someone who only reads the page
     let pre = false; const prefetch = () => { if (pre || typeof S !== 'undefined' || !window.ARC_TOOL) return; pre = true;
       for (const href of [ARC_TOOL.aladin, ...ARC_TOOL.rest]) { const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'script'; l.href = href; document.head.append(l); } };
-    for (const ev of ['pointerover', 'touchstart', 'focusin']) landing.addEventListener(ev, e => { if (e.target.closest && e.target.closest('[data-launch],[data-launch-ct],[data-launch-tour]')) prefetch(); }, { passive: true });
-    const preEl = $('lp-targets') || $('lp-start');
-    if ('IntersectionObserver' in window && preEl) { const po = new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) { prefetch(); po.disconnect(); } }, { root: landing }); po.observe(preEl); }
-    const ticks = qa('.lp-ticks i', landing); let ti = 0;
-    if (!reduce && ticks.length) setInterval(() => { if (!html.classList.contains('landing') || $('lpm-blink').hidden) return; ticks.forEach((t, i) => t.classList.toggle('on', i === ti)); ti = (ti + 1) % ticks.length; }, 520);
+    for (const ev of ['pointerover', 'touchstart', 'focusin']) landing.addEventListener(ev, e => { if (e.target.closest && e.target.closest('[data-launch],[data-launch-ct],[data-launch-tour],[data-try],#lpq')) prefetch(); }, { passive: true });
   }
+  window.ARC_NAV = { showLanding, launch, launchCt, launchPlace, launchTour, launchTry };   // v0.58: for the new viewer bar (nv.js)
   // the brand in the tool goes back to the start page
   if ($('brandb')) $('brandb').onclick = showLanding;
   // H (Clear view) must not act on the hidden tool while the start page is open
